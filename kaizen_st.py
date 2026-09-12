@@ -319,7 +319,7 @@ def main():
     ]
 
     st.subheader("今日の予定入力")
-    st.caption("学校や部活、習い事など本日の予定を入れてください")
+    st.caption("学校や部活、習い事など本日の予定を入れてください。例：バイト 16:00 20:00")
     plan_df = st.data_editor(
         pd.DataFrame(
             columns=["title", "start", "end"]
@@ -389,6 +389,7 @@ def main():
             
             # ★ 献立はAIが勝手に選ぶ
         breakfast, lunch, dinner = smart_menu_choice(mood, fatigue, body_condition)
+        st.subheader("今日の献立案")
         st.write(f"朝：{breakfast}")
         st.write(f"昼：{lunch}")
         st.write(f"夜：{dinner}")
