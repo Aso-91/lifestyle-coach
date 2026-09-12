@@ -458,6 +458,10 @@ def main():
         )
         conn.close()
 
+        st.write("現在時刻確認")
+
+        st.write(datetime.now())
+
         st.subheader("📈睡眠時間の推移")
         st.line_chart(
             df.set_index("record_date")["sleep_hours"]
