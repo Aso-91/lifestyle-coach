@@ -39,7 +39,7 @@ def save_daily_record(
     )
     VALUES (?, ?, ?, ?, ?)
     """, (
-        datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        datetime.now().strftime("%Y-%m-%d %H:%M"),
         subject,
         sleep_hours,
         mood,
