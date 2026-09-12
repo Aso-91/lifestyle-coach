@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 import random
 import json
 import sqlite3
@@ -39,7 +40,9 @@ def save_daily_record(
     )
     VALUES (?, ?, ?, ?, ?)
     """, (
-        datetime.now().strftime("%Y-%m-%d %H:%M"),
+        datetime.now(
+            ZoneInfo("Asia/Tokyo")
+        ).strftime("%Y-%m-%d %H:%M"),
         subject,
         sleep_hours,
         mood,
@@ -457,10 +460,6 @@ def main():
             conn
         )
         conn.close()
-
-        st.write("現在時刻確認")
-
-        st.write(datetime.now())
 
         st.subheader("📈睡眠時間の推移")
         st.line_chart(
