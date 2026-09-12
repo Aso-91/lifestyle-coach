@@ -278,7 +278,7 @@ def main():
     init_db()
     st.title("生活改善AIコーチ（完全版）")
     st.link_button(
-        "使い方についてはこちら",
+        "使い方についてはこちらでダウンロード（クリックまたは長押し）",
         "https://raw.githubusercontent.com/Aso-91/lifestyle-coach/main/%E3%82%A2%E3%83%97%E3%83%AA%E8%AA%AC%E6%98%8E%E6%9B%B8.pdf"
     )
     # ★ 勉強するかどうか
